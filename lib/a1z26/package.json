@@ -1,0 +1,13 @@
+{
+  "name": "a1z26",
+  "version": "1.0.0",
+  "description": "",
+  "main": "a1z26.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

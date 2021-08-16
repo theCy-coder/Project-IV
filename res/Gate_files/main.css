@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #fefefe;
+  font-size: 18px;
+}
+.super-container {
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+}
+.auth-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+.auth-box {
+  width: 90%;
+  height: 95%;
+  padding: 1em;
+  border: 2px solid #fefefe;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+.auth-box h1 {
+  font-family: "IBM Plex Mono", monospace;
+  text-align: center;
+  color: #fefefe;
+}
+.auth-box form {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.auth-box form input[type="text"] {
+  width: 100%;
+  padding: 5px 10px 5px 10px;
+  font-size: 1rem;
+}
+.auth-box form #code-box {
+  width: 100%;
+  color: #fefefe;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+}
+.auth-box form button {
+  width: 100%;
+  padding: 5px 10px 5px 10px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+#timer {
+  color: #fefefe;
+  font-size: 2rem;
+}
+#code-box {
+  border: 5px double #fefefe;
+  padding: 1rem;
+}
+
+.mind-container {
+  height: 100%;
+  width: 100%;
+  background-image: url("../res/neurons-portrait.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#nodes {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.image {
+  position: absolute;
+  border-radius: 50%;
+}
+#node1 {
+  background-image: url("../res/img1-circula.png");
+  background-position: center;
+  background-size: contain;
+  height: 100px;
+  width: 100px;
+  bottom: 30%;
+  left: 50%;
+}
+#node1:hover {
+  transition: 300ms ease-in-out;
+  transform: scale(1.2, 1.2);
+}
+#node2:hover {
+  transition: 300ms ease-in-out;
+  transform: scale(1.2, 1.2);
+}
+#node2 {
+  background-image: url("../res/img5-circula.png");
+  background-position: center;
+  background-size: contain;
+  height: 50px;
+  width: 50px;
+  bottom: 65%;
+  left: 78%;
+}
+.modal {
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
+  transition: 500ms ease-in-out;
+}
+.modal-content {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background: rgb(73, 83, 193);
+  background: linear-gradient(
+    0deg,
+    rgba(73, 83, 193, 0.835171568627451) 0%,
+    rgba(255, 255, 255, 0.6334908963585435) 100%
+  );
+  backdrop-filter: blur(10px);
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 2rem;
+  transition: ease-in-out;
+}
+.modal-content img {
+  height: 15%;
+  transition: 300ms ease-in-out;
+}
+
+.modal-content .description {
+  color: #fefefe;
+  font-size: 1rem;
+  padding: 3rem 1rem;
+  font-family: "Open Sans", sans-serif;
+}
+.modal-content .description p {
+  margin-top: 20px;
+}
+.back-btn {
+  color: #fefefe;
+  font-size: 2rem;
+}

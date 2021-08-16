@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)http://127.0.0.1:5500/secrets/gate.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./Gate_files/main.css">
+    <title>Gate</title>
+
+</head>
+<body data-new-gr-c-s-check-loaded="14.991.0" data-gr-ext-installed="">
+    <div class="auth-container">
+       
+        <div class="auth-box">
+            <h1>You must solve the cipher first to enter.</h1>
+            
+            <form id="decode-box">
+                <input type="text" id="decoded" tabindex="0" placeholder="Type here">
+                <div id="code-box">25 15 21 8 1 22 5 21 14 12 15 3 11 5 4 13 25 13 5 13 15 18 25</div>
+                <button type="submit" id="btn-auth">Unlock</button>
+            </form>
+            <span id="timer">88</span>    
+        </div> 
+    </div>    
+
+    <script defer="">
+        let countdown = (document.cookie==="undefined"||document.cookie==="")? 300 : Number(getCookie("countdown"));
+        function cookieToObject(cookie){
+            const c = decodeURIComponent(cookie).split(';');
+            const splittedCookie = c.map(n=>n.split('='))
+        
+            return splittedCookie.map(n=>{
+                let cookies = new Object();
+                let prop = n[0].trim();
+                cookies[prop] = n[1];
+                return cookies;
+            });
+        }
+        function getCookie(find){
+            let cookie = cookieToObject(document.cookie);
+            let n = cookie.map(n=>n)
+                        .filter(n=>n[find])
+            return n[0][find];
+        }
+        const timerEl = document.querySelector('#timer');
+        
+        timerEl.innerText = countdown;
+        let timer = setInterval(() => {
+            if(countdown<=0){
+                clearInterval(timer);
+                timerEl.innerText = "Go on. You can do it!";
+            }
+            else{
+                timerEl.innerText = countdown--;
+                let now = new Date();
+                let expiry = now.setTime(now.getTime() + 15*60*1000);
+                document.cookie = "countdown="+countdown+";expires="+expiry+";path=/";
+            }
+        }, 1000);
+    </script>
+    
+    <script type="module" defer="" src="./Gate_files/manageAuth.js.download"></script>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
