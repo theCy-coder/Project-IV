@@ -16,7 +16,7 @@ form.addEventListener("submit", (e)=> {
             document.getElementById("invalid-text").remove();
         }
         killCookie('countdown');
-        window.location = '../mind.html'
+        window.location = './mind.html'
     }else{
 
         invalidText.id = "invalid-text";
