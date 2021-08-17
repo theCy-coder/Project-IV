@@ -4,7 +4,11 @@
 * {
   padding: 0;
   margin: 0;
+
   box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
 }
 
 html,
@@ -13,6 +17,7 @@ body {
   width: 100%;
   background-color: #fefefe;
   font-size: 18px;
+  font-family: "IBM Plex Mono", monospace;
 }
 .super-container {
   height: 100%;
@@ -30,52 +35,65 @@ body {
 .auth-box {
   width: 90%;
   height: 95%;
-  padding: 1em;
+  padding: 1rem;
   border: 2px solid #fefefe;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5rem;
 }
-.auth-box h1 {
+.auth-box > * {
+  margin-top: 5rem;
+}
+
+.auth-box form {
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  grid-template-areas: "title" "input" "code" "button";
+  row-gap: 2rem;
+  padding: 2rem 1rem;
+}
+.auth-box form h1 {
   font-family: "IBM Plex Mono", monospace;
   text-align: center;
   color: #fefefe;
-}
-.auth-box form {
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
+  font-size: 1rem;
+  grid-area: title;
 }
 .auth-box form input[type="text"] {
   width: 100%;
   padding: 5px 10px 5px 10px;
   font-size: 1rem;
+  grid-area: input;
 }
 .auth-box form #code-box {
   width: 100%;
   color: #fefefe;
   font-size: 1.2rem;
   line-height: 1.5rem;
+  grid-area: code;
 }
 .auth-box form button {
   width: 100%;
   padding: 5px 10px 5px 10px;
   font-size: 1rem;
   font-weight: bold;
+  background-color: #fefefe;
+  border: none;
+  grid-area: button;
 }
 #timer {
   color: #fefefe;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  text-align: center;
 }
 #code-box {
   border: 5px double #fefefe;
   padding: 1rem;
+  color: #fefefe;
+  font-size: 0.8rem;
 }
 
 .mind-container {
@@ -106,11 +124,25 @@ body {
 }
 #node1:hover {
   transition: 300ms ease-in-out;
+  -webkit-transition: 300ms ease-in-out;
+  -moz-transition: 300ms ease-in-out;
+  -o-transition: 300ms ease-in-out;
+
   transform: scale(1.2, 1.2);
+  -webkit-transform: scale(1.2, 1.2);
+  -moz-transform: scale(1.2, 1.2);
+  -o-transform: scale(1.2, 1.2);
 }
 #node2:hover {
   transition: 300ms ease-in-out;
+  -webkit-transition: 300ms ease-in-out;
+  -moz-transition: 300ms ease-in-out;
+  -o-transition: 300ms ease-in-out;
+
   transform: scale(1.2, 1.2);
+  -webkit-transform: scale(1.2, 1.2);
+  -moz-transform: scale(1.2, 1.2);
+  -o-transform: scale(1.2, 1.2);
 }
 #node2 {
   background-image: url("../res/img5-circula.png");
@@ -129,6 +161,9 @@ body {
   height: 100%;
   width: 100%;
   transition: 500ms ease-in-out;
+  -webkit-transition: 500ms ease-in-out;
+  -moz-transition: 500ms ease-in-out;
+  -o-transition: 500ms ease-in-out;
 }
 .modal-content {
   display: flex;
@@ -141,17 +176,24 @@ body {
     rgba(255, 255, 255, 0.6334908963585435) 100%
   );
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  -moz-backdrop-filter: blur(10px);
+  -o-backdrop-filter: blur(10px);
+
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
   align-items: center;
   align-content: center;
   padding: 2rem;
-  transition: ease-in-out;
 }
 .modal-content img {
   height: 15%;
+  margin: 5px;
   transition: 300ms ease-in-out;
+  -webkit-transition: 300ms ease-in-out;
+  -moz-transition: 300ms ease-in-out;
+  -o-transition: 300ms ease-in-out;
 }
 
 .modal-content .description {
@@ -187,7 +229,11 @@ body {
   width: 100%;
   border-radius: 25px;
   background-color: #ff0;
-  transition: 300ms ease-in-out;
+
+  transition: 500ms ease-in-out;
+  -webkit-transition: 500ms ease-in-out;
+  -moz-transition: 500ms ease-in-out;
+  -o-transition: 500ms ease-in-out;
 }
 .question-container {
   width: 100%;
@@ -197,7 +243,7 @@ body {
   background: linear-gradient(
     0deg,
     rgba(199, 136, 109, 0.7847514005602241) 0%,
-    rgba(110, 159, 188, 0.6110819327731092) 100%
+    rgba(111, 138, 153, 0.611) 100%
   );
   font-family: "Open Sans", sans-serif;
 }
@@ -245,9 +291,19 @@ body {
   left: 0;
 
   transition: 500ms background ease-in-out;
+  -webkit-transition: 500ms background ease-in-out;
+  -moz-transition: 500ms background ease-in-out;
+  -o-transition: 500ms background ease-in-out;
 
   animation-name: ahri;
+  -webkit-animation-name: ahri;
+  -moz-animation-name: ahri;
+  -o-animation-name: ahri;
+
   animation-duration: 3s;
+  -webkit-animation-duration: 3s;
+  -moz-animation-duration: 3s;
+  -o-animation-duration: 3s;
 }
 
 @keyframes ahri {
